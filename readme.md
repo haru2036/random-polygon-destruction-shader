@@ -1,6 +1,8 @@
 # polygon-destruction(random)
 ポリゴンをランダムに浮遊させるシェーダ
 
+![example](https://raw.githubusercontent.com/haru2036/random-polygon-destruction-shader/main/img/example_sphere.gif)
+
 ## パラメータについて
 |name|description|
 |---|---|
