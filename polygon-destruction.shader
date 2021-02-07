@@ -1,4 +1,14 @@
-﻿Shader "Custom/Polygon Destruction (Random)"
+﻿/**
+Random Polygon Destruction Shader
+
+Copyright (c) 2021 haru2036
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+
+*/
+
+Shader "Custom/Polygon Destruction (Random)"
 {
 	Properties
 	{
