@@ -28,6 +28,7 @@ Shader "Custom/Polygon Destruction (Random)"
 		Pass
 		{
 			CGPROGRAM
+			#pragma multi_compile_instancing
 			#pragma vertex vert
 			#pragma geometry geom
 			#pragma fragment frag 
@@ -45,6 +46,7 @@ Shader "Custom/Polygon Destruction (Random)"
 			{
 				float4 vertex : POSITION;
 				float2 uv : TEXCOORD0;
+				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
 			struct g2f
@@ -54,6 +56,7 @@ Shader "Custom/Polygon Destruction (Random)"
 				fixed4 color : COLOR;
 				float3 barycentricCoords : TEXCOORD1;
 				float distance : TEXCOORD2;
+				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			float rand(float2 seed)
@@ -83,6 +86,9 @@ Shader "Custom/Polygon Destruction (Random)"
 				{
 					appdata v = input[i];
 					g2f o;
+					UNITY_SETUP_INSTANCE_ID(v); 
+					UNITY_INITIALIZE_OUTPUT(g2f, o); 
+					UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); 
 					v.vertex.xyz += normal * destruction * _ScaleFactor * random * weight; 
 					o.vertex = UnityObjectToClipPos(v.vertex);
 					o.uv = v.uv;
