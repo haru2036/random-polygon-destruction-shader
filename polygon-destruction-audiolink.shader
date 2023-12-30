@@ -32,7 +32,7 @@ Shader "Custom/Polygon Destruction (Audiolink)"
 			#pragma fragment frag 
 
 			#include "UnityCG.cginc"
-			#include "vrc-udon-audio-link/AudioLink/Shaders/AudioLink.cginc"
+			#include "Packages/com.llealloo.audiolink/Runtime/Shaders/AudioLink.cginc"
 
 			sampler2D _WeightMap;
 			fixed4 _Color;
